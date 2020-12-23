@@ -7,7 +7,7 @@ import { AnchorEngine } from "../anchorEngine";
  */
 export default class EntryLoading extends EntryBase {
   constructor(engine: AnchorEngine) {
-    super(engine, "Searching for anchors...", TreeItemCollapsibleState.None);
+    super(engine, "查找标记中...", TreeItemCollapsibleState.None);
 
     this.iconPath = {
       light: this.loadResourceSvg("load"),

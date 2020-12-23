@@ -24,26 +24,26 @@
 		"commands": [
 			{
 				"command": "commentAnchors.parse",
-				"title": "Parse the current file and look for anchors",
+				"title": "x Parse the current file and look for anchors",
 				"category": "Comment Anchors"
 			},
 			{
 				"command": "commentAnchors.toggle",
-				"title": "Toggle the visibility of comment anchors",
+				"title": "x Toggle the visibility of comment anchors",
 				"category": "Comment Anchors"
 			},
 			{
 				"command": "commentAnchors.listTags",
-				"title": "List configured anchor tags",
+				"title": "x List configured anchor tags",
 				"category": "Comment Anchors"
 			},
 			{
 				"command": "commentAnchors.openFileAndRevealLine",
-				"title": "Open a file and reveal a line"
+				"title": "x Open a file and reveal a line"
 			},
 			{
 				"command": "commentAnchors.launchWorkspaceScan",
-				"title": "Initiate a workspace scan"
+				"title": "x Initiate a workspace scan"
 			}
 		],
 		"viewsContainers": {
@@ -51,7 +51,7 @@
 				{
 					"id": "comment-anchors",
 					"title": "Comment Anchors",
-					"icon": "res/icon.svg"
+					"icon": "res/logo.png"
 				}
 			]
 		},
@@ -59,15 +59,15 @@
 			"comment-anchors": [
 				{
 					"id": "fileAnchors",
-					"name": "File Anchors"
+					"name": "文件标记"
 				},
 				{
 					"id": "workspaceAnchors",
-					"name": "Workspace Anchors"
+					"name": "工作区标记"
 				},
 				{
 					"id": "epicAnchors",
-					"name": "Epic Anchors",
+					"name": "主题标记",
 					"visibility": "collapsed"
 				}
 			]

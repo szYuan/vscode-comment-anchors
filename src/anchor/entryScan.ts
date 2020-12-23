@@ -7,7 +7,7 @@ import { AnchorEngine } from "../anchorEngine";
  */
 export default class EntryScan extends EntryBase {
   constructor(engine: AnchorEngine) {
-    super(engine, "Click to start scanning", TreeItemCollapsibleState.None);
+    super(engine, "点击开始查找", TreeItemCollapsibleState.None);
 
     this.iconPath = {
       light: this.loadResourceSvg("launch"),

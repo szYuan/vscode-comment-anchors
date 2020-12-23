@@ -749,8 +749,10 @@ export class AnchorEngine {
     let parseCount = 0;
     let parsePercentage = 0;
 
-    parseStatus.tooltip = "Provided by the Comment Anchors extension";
-    parseStatus.text = `$(telescope) Initializing...`;
+    // Provided by the Comment Anchors extension
+    parseStatus.tooltip = "注释标记插件";
+    // Initializing
+    parseStatus.text = `$(telescope) 初始化中...`;
     parseStatus.show();
 
     for (let i = 0; i < uris.length && parseCount < maxFiles; i++) {

@@ -84,14 +84,10 @@ export class AnchorEngine {
   public context: ExtensionContext;
 
   /** Then event emitter in charge of refreshing the file trees */
-  public _onDidChangeTreeData: EventEmitter<undefined> = new EventEmitter<
-    undefined
-  >();
+  public _onDidChangeTreeData: EventEmitter<undefined> = new EventEmitter<undefined>();
 
   /** Then event emitter in charge of refreshing the link lens */
-  public _onDidChangeLensData: EventEmitter<undefined> = new EventEmitter<
-    undefined
-  >();
+  public _onDidChangeLensData: EventEmitter<undefined> = new EventEmitter<undefined>();
 
   /** Debounced function for performance improvements */
   private _idleRefresh: (() => void) | undefined;
@@ -772,7 +768,7 @@ export class AnchorEngine {
           parseCount++;
           parsePercentage = (parseCount / uris.length) * 100;
 
-          parseStatus.text = `$(telescope) Parsing Comment Anchors... (${parsePercentage.toFixed(
+          parseStatus.text = `$(telescope) 标记解析中... (${parsePercentage.toFixed(
             1
           )}%)`;
         }
@@ -782,7 +778,7 @@ export class AnchorEngine {
     }
 
     // Scanning has now completed
-    parseStatus.text = `Comment Anchors loaded!`;
+    parseStatus.text = `标记查找完成!`;
 
     setTimeout(() => {
       parseStatus.dispose();
@@ -926,7 +922,8 @@ export class AnchorEngine {
             return false;
           }
         });
-
+        
+        // QUESTION 什么情况会出现text为null
         if (text == null) {
           text = await this.readDocument(document);
         }
@@ -943,10 +940,7 @@ export class AnchorEngine {
         // Find all anchor occurences
         while ((match = this.matcher!.exec(text))) {
           // Find the tagName of match
-          const tagName = match[MATCHER_TAG_INDEX].toUpperCase().replace(
-            endTag,
-            ""
-          );
+          const tagName = match[MATCHER_TAG_INDEX].toUpperCase().replace(endTag, "");
 
           const tag: TagEntry = this.tags.get(tagName)!;
           const isRegionStart = tag.behavior == "region";
